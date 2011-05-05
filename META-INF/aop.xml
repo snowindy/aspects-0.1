@@ -1,0 +1,33 @@
+<aspectj>
+	<aspects>
+
+		<aspect name="ru.neoflex.aspectj.logging.Logging" />
+
+		<include within="ru.introdes..*" />
+		<include within="ru.neoflex..*" />
+		<include within="pagecode..*" />
+
+	</aspects>
+
+	<!-- 	<weaver options="-showWeaveInfo -verbose">
+	-->
+	<weaver options="-showWeaveInfo -verbose">
+
+		<include within="ru.introdes..*" />
+		<include within="pagecode..*" />
+
+
+
+		<!-- 		<include within="(!@NoWeave foo.*) AND foo.*" /> -->
+		<!-- 		<exclude within="bar.*" /> -->
+		<!-- Dump all types within the "com.foo.bar" package
+			to the "./_ajdump" folder on disk (for diagnostic purposes) -->
+		<!-- 	<dump within="com.foo.bar.*" /> -->
+
+		<!-- Dump all types within the "com.foo.bar" package and sub-packages,
+			both before are after they are woven,
+			which can be used for byte-code generated at runtime
+			<dump within="com.foo.bar..*" beforeandafter="true"/>  -->
+	</weaver>
+
+</aspectj>
